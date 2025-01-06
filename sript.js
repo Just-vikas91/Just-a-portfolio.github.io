@@ -41,3 +41,25 @@ document.addEventListener('mousemove', function(e) {
         circle.style.top = `${e.clientY - 20}px`;
     }, 50);
 });
+
+// Adding the auto theme change acooridng to browser
+// Function to apply the theme
+  function applyTheme(theme) {
+    if (theme === 'dark') {
+      document.documentElement.setAttribute('data-theme', 'dark');
+    } else {
+      document.documentElement.setAttribute('data-theme', 'light');
+    }
+  }
+
+  // Check browser's theme
+  const prefersDarkScheme = window.matchMedia('(prefers-color-scheme: dark)');
+
+  // Apply the theme based on preference
+  applyTheme(prefersDarkScheme.matches ? 'dark' : 'light');
+
+  // Listen for changes in the theme
+  prefersDarkScheme.addEventListener('change', (e) => {
+    applyTheme(e.matches ? 'dark' : 'light');
+  });
+

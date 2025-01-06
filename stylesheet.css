@@ -35,14 +35,26 @@ body
     transition: transform 0.1s ease-out;
 }
 
+/* Theme preference */
+/* Default (light) theme */
+body {
+    background-color: white;
+    color: black;
+  }
+  
+  /* Dark theme */
+  [data-theme="dark"] {
+    background-color: black;
+    color: white;
+  }
+
 .header 
 {
-    position: fixed;
+    position: relative;
     top: 0;
     left: 0;
     width: 100%;
     padding: 20px 10%;
-    background: #051129;
     display: flex;
     justify-content: space-between;
     align-items: center;
